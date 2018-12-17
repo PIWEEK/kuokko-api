@@ -29,7 +29,7 @@ data class Recipe(
     val id: String,
     val title: String,
     val cookTime: String? = null,
-    val dificulty: RecipeDificulty = RecipeDificulty.MEDIUM,
+    val dificulty: RecipeDificulty? = RecipeDificulty.MEDIUM,
     val language: String = "ES_es",
     val ingredients: List<Ingredient> = listOf(),
     val tools: List<Tool> = listOf(),

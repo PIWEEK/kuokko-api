@@ -18,3 +18,13 @@ micronaut:
 
 jackson:
   serializationInclusion: NON_NULL
+
+
+database:
+  host: 127.0.0.1
+  port: 5432
+  database: kuokko_dev
+  user: kuokko
+  password: kuokko
+  #jdbcUrl: jdbc:postgresql://127.0.0.1:5432/kuokko_dev
+  
