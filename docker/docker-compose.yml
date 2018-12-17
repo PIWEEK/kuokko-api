@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:11.1-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: kuokko_dev
+      POSTGRES_USER: kuokko
+      POSTGRES_PASSWORD: kuokko
+
+    ports:
+      - 5432:5432
+
