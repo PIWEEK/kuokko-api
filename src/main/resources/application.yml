@@ -26,5 +26,8 @@ database:
   database: kuokko_dev
   user: kuokko
   password: kuokko
-  #jdbcUrl: jdbc:postgresql://127.0.0.1:5432/kuokko_dev
   
+recipes:
+  data:
+    folder: "/tmp/recipes"
+

@@ -18,7 +18,7 @@ object RecipeControllerSpec: Spek({
 
         it("Retrieve recipes by id") {
             val recipe = controller.retrieveById("1")
-            assertEquals("Recipe 1", recipe.title)
+            assertEquals("Recipe 1", recipe!!.title)
             assertEquals(0, recipe.tools.size)
         }
 

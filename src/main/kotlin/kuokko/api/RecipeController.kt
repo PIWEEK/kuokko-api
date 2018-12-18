@@ -9,16 +9,18 @@ import io.micronaut.http.annotation.Produces
 
 import kuokko.api.model.Recipe
 import kuokko.api.repository.RecipeRepository
+import kuokko.api.data.RecipesLoader
 
 @Controller("/recipes")
 class RecipeController(
-    val recipeRepository: RecipeRepository
+    val recipeRepository: RecipeRepository,
+    val recipesLoader: RecipesLoader
 ) {
 
     @Get("/")
     fun listRecipes() = recipeRepository.search().map(Recipe::summary)
 
     @Get("/{id}")
-    fun retrieveById(id: String) = recipeRepository.get(id)
+    fun retrieveById(id: String) = recipesLoader.processRecipes().getOrNull(0)
 
 }

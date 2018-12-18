@@ -1,0 +1,11 @@
+database:
+  host: 127.0.0.1
+  port: 5432
+  database: kuokko_dev
+  user: kuokko
+  password: kuokko
+
+recipes:
+  data:
+    folder: "/tmp/recipes"
+

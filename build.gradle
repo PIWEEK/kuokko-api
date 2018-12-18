@@ -38,7 +38,8 @@ dependencies {
     kaptTest "io.micronaut:micronaut-inject-java"
 
     runtime "ch.qos.logback:logback-classic:1.2.3"
-    runtime "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.4.1"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.4.1"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.7"
 
     testCompile("org.spekframework.spek2:spek-dsl-jvm:${spekVersion}") {
         exclude group: 'org.jetbrains.kotlin'
@@ -64,7 +65,8 @@ shadowJar {
     mergeServiceFiles()
 }
 
-run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1')
+run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1', '-Dmicronaut.environments=dev')
+test.jvmArgs('-Dmicronaut.environments=test')
 
 mainClassName = "kuokko.api.Application"
 
