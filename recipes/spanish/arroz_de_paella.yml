@@ -1,0 +1,52 @@
+title: Paella valenciana
+author: Kuokko
+description:
+  La paella es un plato típico de la gastronomía española y
+  originariamente proviene de la provincia de Valencia, situada en la
+  costa este. Este plato tiene como ingrediente principal el arroz,
+  que se cocina en una paella y de ahí su denominación.
+
+time:
+  cooking: 40m
+  preparation: 20m
+
+dificulty: easy
+servings: 4
+language: ES_es
+
+instructions:
+  - tool: Paella
+    steps:
+      - add: Aceite, 6 cucharadas
+      - wait: A que esté caliente
+      - add: Conejo, 500gr, troceado
+      - add: Pollo, 1000gr, troceado
+      - technique: Sofreir, hasta el esté dorado
+        tool: Paleta
+        note: Recuerda darle vueltas a las piezas de carne para que se hagan uniformente
+      - add: Judias verdes, 200gr
+      - add: Garrofó fresco, 100gr
+      - technique: Rehogar
+      - add: Tomate, 100gr, troceado
+      - technique: Sofreir
+        note: Remover constantemente
+      - add: Pimenton, 1 pellizco, molido
+      - technique: Remover, un instante
+      - add: Agua
+        note: Hasta los remaches de la paella
+      - add: Azafran, unas hebras
+      - add: Romero, una ramita
+      - add: Sal
+      - other: Poner fuego fuerte
+      - wait: A que rompa a hervir
+      - wait: 5 minutos en ebullición
+      - other: Bajar a fuego medio
+      - wait: 25m
+      - other: Subir el fuego
+      - add: Arroz bomba, 400gr
+        note: La forma tradicional de ponerlo es haciendo una cruz en el agua y repartirlo de modo uniforme
+      - wait: 10m
+      - other: Reducir el fuego al amitad
+      - wait: A que esté cocido
+
+
