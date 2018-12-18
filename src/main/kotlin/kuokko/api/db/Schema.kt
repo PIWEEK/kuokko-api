@@ -7,9 +7,9 @@ import java.util.UUID
 
 fun Table.uuidPK() = uuid("id").primaryKey().clientDefault { UUID.randomUUID() }
 
-object RecipeDB: Table("recipes") {
-    val id = uuidPK()
-    val title = text("name")
+object RecipeDB: UUIDTable("recipes") {
+    val title = text("name").uniqueIndex()
+    val author = text("author").nullable()
     val cookTime = varchar("cook_time", 255).nullable()
     val preparationTime = varchar("preparation_time", 255).nullable()
     val totalTime = varchar("total_time", 255).nullable()
@@ -19,55 +19,51 @@ object RecipeDB: Table("recipes") {
     val recipeUrl = text("recipe_url").nullable()
 }
 
-object IngredientDB: Table("ingredients") {
-    val id = uuidPK()
-    val name = varchar("name", 255)
+object IngredientDB: UUIDTable("ingredients") {
+    val name = varchar("name", 255).uniqueIndex()
 }
 
-object ToolDB: Table("tools") {
-    val id = uuidPK()
-    val name = varchar("name", 255)
+object ToolDB: UUIDTable("tools") {
+    val name = varchar("name", 255).uniqueIndex()
     val description = text("description").nullable()
     val photo = text("photo").nullable()
 }
 
-object TechniqueDB: Table("techniques") {
-    val id = uuidPK()
-    val name = varchar("name", 255)
+object TechniqueDB: UUIDTable("techniques") {
+    val name = varchar("name", 255).uniqueIndex()
     val description = text("description").nullable()
     val video = text("video").nullable()
 }
 
 object RecipeWithIngredients: Table("recipes_ingredients") {
-    val recipeId = uuid("recipe_id").references(RecipeDB.id).primaryKey(0)
-    val ingredientId = uuid("ingredient_id").references(IngredientDB.id).primaryKey(1)
+    val recipeId = reference("recipe_id", RecipeDB).primaryKey(0)
+    val ingredientId = reference("ingredient_id", IngredientDB).primaryKey(1)
     val quantity = varchar("quantity", 255).nullable()
     val unit = varchar("unit", 255).nullable()
     val preparation = text("preparation").nullable()
 }
 
 object RecipeWithTools: Table("recipes_tools") {
-    val recipeId = uuid("recipe_id").references(RecipeDB.id).primaryKey(0)
-    val toolId = uuid("ingredient_id").references(ToolDB.id).primaryKey(1)
+    val recipeId = reference("recipe_id", RecipeDB).primaryKey(0)
+    val toolId = reference("tool_id", ToolDB).primaryKey(1)
 }
 
 object RecipeWithTechniques: Table("recipes_techniques") {
-    val recipeId = uuid("recipe_id").references(RecipeDB.id).primaryKey(0)
-    val techniqueId = uuid("ingredient_id").references(TechniqueDB.id).primaryKey(1)
+    val recipeId = reference("recipe_id", RecipeDB).primaryKey(0)
+    val techniqueId = reference("technique_id", TechniqueDB).primaryKey(1)
 }
 
-object RecipeEntry: Table("recipe_entry") {
-    val id = uuidPK()
-    val recipeId = uuid("recipe_id").references(RecipeDB.id)
+object RecipeEntry: UUIDTable("recipe_entry") {
+    val recipeId = reference("recipe_id", RecipeDB)
     val description = text("description").nullable()
 }
 
-object RecipeStep: Table("recipe_step") {
-    val id = uuidPK()
-    val recipeEntryId = uuid("recipe_entry_id").references(RecipeEntry.id)
+object RecipeStep: UUIDTable("recipe_step") {
+    val recipeEntryId = reference("recipe_entry_id", RecipeEntry)
     val action = varchar("action", 255)
-    val ingredient = varchar("ingredient", 255).nullable()
-    val portion = varchar("portion", 255).nullable()
+    val ingredient = reference("ingredient_id", IngredientDB).nullable()
+    val technique = reference("technique_id", TechniqueDB).nullable()
+    val portion = float("portion").nullable()
     val description = varchar("description", 255).nullable()
     val time = varchar("time", 255).nullable()
     val note = varchar("note", 255).nullable()
@@ -83,6 +79,17 @@ object Schema {
         Database.connect(jdbcUrl, driver = "org.postgresql.Driver", user = config.user ?: "", password = config.password ?: "")
         transaction {
             addLogger(StdOutSqlLogger)
+            SchemaUtils.drop (
+                RecipeDB,
+                IngredientDB,
+                ToolDB,
+                TechniqueDB,
+                RecipeWithIngredients,
+                RecipeWithTools,
+                RecipeWithTechniques,
+                RecipeEntry,
+                RecipeStep
+            )
             SchemaUtils.createMissingTablesAndColumns (
                 RecipeDB,
                 IngredientDB,

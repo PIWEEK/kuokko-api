@@ -53,9 +53,15 @@ data class RecipeSummary(
 data class Recipe(
     val id: String? = null,
     val title: String,
+    val author: String? = null,
     val cookTime: String? = null,
+    val preparationTime: String? = null,
+    val totalTime: String? = null,
     val dificulty: String? = null,
-    val language: String = "ES_es",
+    val language: String? = "ES_es",
+    val photoUrl: String? = null,
+    val recipeUrl: String? = null,
+
     val ingredients: List<Ingredient> = listOf(),
     val tools: List<Tool> = listOf(),
     val techniques: List<Technique> = listOf(),

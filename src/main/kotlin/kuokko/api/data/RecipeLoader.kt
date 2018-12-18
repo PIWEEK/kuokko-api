@@ -20,6 +20,7 @@ import kuokko.api.repository.IngredientRepository
 import kuokko.api.repository.RecipeRepository
 import kuokko.api.repository.TechniqueRepository
 import kuokko.api.repository.ToolRepository
+import kuokko.api.db.DataSource
 
 import kuokko.api.model.*
 
@@ -29,6 +30,7 @@ class RecipesLoader(
     var ingredientRepository: IngredientRepository,
     var techniqueRepository: TechniqueRepository,
     var toolRepository: ToolRepository,
+    var dataSource: DataSource,
     @Property(name="recipes.data.folder") var recipesFolder: String
 ) {
 
@@ -68,6 +70,7 @@ class RecipesLoader(
     }
 
     fun insertRecipe(recipe: RecipeYml): Recipe {
+        // TODO: Search for duplicated ingredients to sum them up
         val ingredients = recipe
                 .ingredients
                 .map { Ingredient(name = it.first(), quantity = it.getOrNull(1), preparation = it.getOrNull(2)) }
