@@ -27,7 +27,7 @@ class DatabaseRecipeRepository(
         cookTime = row[RecipeDB.cookTime],
         preparationTime = row[RecipeDB.preparationTime],
         totalTime = row[RecipeDB.totalTime],
-        dificulty = row[RecipeDB.dificulty],
+        difficulty = row[RecipeDB.difficulty],
         language = row[RecipeDB.language],
         photoUrl = row[RecipeDB.photoUrl],
         recipeUrl = row[RecipeDB.recipeUrl]
@@ -102,7 +102,7 @@ class DatabaseRecipeRepository(
                 it[cookTime] = recipe.cookTime
                 it[preparationTime] = recipe.preparationTime
                 it[totalTime] = recipe.totalTime
-                it[dificulty] = recipe.dificulty
+                it[difficulty] = recipe.difficulty
                 it[language] = recipe.language
                 it[photoUrl] = recipe.photoUrl
                 it[recipeUrl] = recipe.recipeUrl
@@ -162,7 +162,7 @@ class DatabaseRecipeRepository(
             result = recipe.copy(id = recipeId.value.toString())
         }
 
-        result!!
+        result
     }
 }
 

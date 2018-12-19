@@ -13,7 +13,7 @@ object RecipeDB: UUIDTable("recipes") {
     val cookTime = varchar("cook_time", 255).nullable()
     val preparationTime = varchar("preparation_time", 255).nullable()
     val totalTime = varchar("total_time", 255).nullable()
-    val dificulty = varchar("dificulty", 255).nullable()
+    val difficulty = varchar("difficulty", 255).nullable()
     val language = varchar("language", 255).nullable()
     val photoUrl = text("photo_url").nullable()
     val recipeUrl = text("recipe_url").nullable()

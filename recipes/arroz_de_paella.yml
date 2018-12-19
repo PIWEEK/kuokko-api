@@ -7,10 +7,10 @@ description:
   que se cocina en una paella y de ahí su denominación.
 
 time:
-  cooking: 40m
-  preparation: 20m
+  cooking: 40
+  preparation: 20
 
-dificulty: easy
+difficulty: easy
 servings: 4
 language: ES_es
 

@@ -47,7 +47,9 @@ data class Step(
 
 data class RecipeSummary(
     val id: String? = null,
-    val title: String
+    val title: String,
+    val author: String? = null,
+    val photoUrl: String? = null
 )
 
 data class Recipe(
@@ -57,7 +59,7 @@ data class Recipe(
     val cookTime: String? = null,
     val preparationTime: String? = null,
     val totalTime: String? = null,
-    val dificulty: String? = null,
+    val difficulty: String? = null,
     val language: String? = "ES_es",
     val photoUrl: String? = null,
     val recipeUrl: String? = null,
@@ -67,7 +69,7 @@ data class Recipe(
     val techniques: List<Technique> = listOf(),
     val method: List<Instruction> = listOf()
 ) {
-    fun summary() = RecipeSummary(this.id, this.title)
+    fun summary() = RecipeSummary(this.id, this.title, this.author, this.photoUrl)
 }
 
 data class RecipeFilter(

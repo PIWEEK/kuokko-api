@@ -117,8 +117,9 @@ class RecipesLoader(
         val result = recipeRepository.insert(
             Recipe(
                 title = recipe.title!!,
+                author = recipe.author,
                 cookTime = recipe.time?.cooking,
-                dificulty = recipe.dificulty,
+                difficulty = recipe.difficulty,
                 language = recipe.language ?: "ES_es",
                 ingredients = ingredients,
                 tools = tools,
@@ -158,7 +159,7 @@ class RecipeYml {
     var description: String? = null
     var time: TimeYml? = null
 
-    var dificulty: String? = null
+    var difficulty: String? = null
     var servings: Int? = null
     var language: String? = null
     var photo: String? = null
