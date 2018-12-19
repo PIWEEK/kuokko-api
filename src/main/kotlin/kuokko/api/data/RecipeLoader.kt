@@ -69,143 +69,69 @@ class RecipesLoader(
         }
     }
 
-    fun insertRecipe(recipe: RecipeYml): Recipe {
-        // TODO: Search for duplicated ingredients to sum them up
-        val ingredients = recipe
-                .ingredients
-                .map { Ingredient(name = it.first(), quantity = it.getOrNull(1), preparation = it.getOrNull(2)) }
-                .map(ingredientRepository::insert)
+    fun parseIngredients(recipe: RecipeYml) = recipe
+            .ingredients
+            .map { Ingredient(name = it.first(), quantity = it.getOrNull(1), preparation = it.getOrNull(2)) }
+            .map(ingredientRepository::insert)
 
-        val tools = recipe.tools
-                .map { Tool(name = it) }
-                .map(toolRepository::insert)
+    fun parseTools(recipe: RecipeYml) = recipe.tools
+            .map { Tool(name = it) }
+            .map(toolRepository::insert)
 
-        val techniques = recipe.techniques
-                .map { Technique(name = it.first()) }
-                .map(techniqueRepository::insert)
+    fun parseTechniques(recipe: RecipeYml) = recipe.techniques
+            .map { Technique(name = it.first()) }
+            .map(techniqueRepository::insert)
 
-        val instructions = (recipe.instructions ?: listOf())
-                .map {
-                    val steps = (it.steps ?: listOf()).map { step ->
-                        when {
-                            step.add != null -> Step(
-                                action = "add",
-                                ingredient = ingredients.find { it.name == step.add!!.split(",").firstOrNull() },
-                                note = step.note
-                            )
-                            step.wait != null -> Step(
-                                action = "wait",
-                                time = step.wait,
-                                note = step.note
-                            )
-                            step.technique != null -> Step(
-                                action = "technique",
-                                technique = techniques.find { it.name == step.technique!!.split(",").firstOrNull() },
-                                note = step.note
-                            )
-                            step.other != null -> Step(
-                                action = "other",
-                                description = step.other,
-                                note = step.note
-                            )
-                            else -> null
-                        }
-                    }.filter { it != null}.map { it!! }
-                    Instruction(steps = steps, description = it.description)
-                }
-
-        val result = recipeRepository.insert(
-            Recipe(
-                title = recipe.title!!,
-                author = recipe.author,
-                servings = recipe.servings?.toInt(),
-                cookTime = recipe.time?.cooking?.toInt(),
-                totalTime = recipe.time?.total?.toInt(),
-                difficulty = recipe.difficulty,
-                language = recipe.language ?: "ES_es",
-                ingredients = ingredients,
-                tools = tools,
-                techniques = techniques,
-                method = instructions
-            )
+    fun parseInstructions(ingredients: List<Ingredient>, techniques: List<Technique>, recipe: RecipeYml) = recipe.instructions?.map {
+        Instruction(
+            steps = parseSteps(ingredients, techniques, it),
+            description = it.description
         )
+    } ?: listOf()
 
-        return result
-    }
-}
+    fun parseSteps(ingredients: List<Ingredient>, techniques: List<Technique>,
+                   instruction: InstructionYml) = instruction.steps?.map { step ->
+        when {
+            step.add != null -> Step(
+                action = "add",
+                ingredient = ingredients.find { it.name == step.add!!.split(",").firstOrNull() },
+                note = step.note
+            )
+            step.wait != null -> Step(
+                action = "wait",
+                time = step.wait,
+                note = step.note
+            )
+            step.technique != null -> Step(
+                action = "technique",
+                technique = techniques.find { it.name == step.technique!!.split(",").firstOrNull() },
+                note = step.note
+            )
+            step.other != null -> Step(
+                action = "other",
+                description = step.other,
+                note = step.note
+            )
+            else -> null
+        }
+    }?.filter { it != null}?.map { it!! } ?: listOf()
 
-class TimeYml {
-    var cooking: String? = null
-    var preparation: String? = null
-    var total: String? = null
-}
 
-class StepYml {
-    var add: String? = null
-    var wait: String? = null
-    var technique: String? = null
-    var other: String? = null
-    var note: String? = null
-    var tool: String? = null
-}
+    fun insertRecipe(recipe: RecipeYml) = recipeRepository.insert(
+        Recipe(
+            title = recipe.title!!,
+            author = recipe.author,
+            servings = recipe.servings?.toInt(),
+            cookTime = recipe.time?.cooking?.toInt(),
+            totalTime = recipe.time?.total?.toInt(),
+            difficulty = recipe.difficulty,
+            language = recipe.language ?: "ES_es",
+            ingredients = parseIngredients(recipe),
+            tools = parseTools(recipe),
+            techniques = parseTechniques(recipe)
+        ).let {
+            it.copy(method = parseInstructions(it.ingredients, it.techniques, recipe))
+        }
+    )
 
-class InstructionYml {
-    var tool: String? = null
-    var steps: List<StepYml>? = null
-    var description: String? = null
-}
-
-class RecipeYml {
-    var title: String? = null
-    var author: String? = null
-    var description: String? = null
-    var time: TimeYml? = null
-
-    var difficulty: String? = null
-    var servings: Int? = null
-    var language: String? = null
-    var photo: String? = null
-    var url: String? = null
-
-    var instructions: List<InstructionYml>? = null
-}
-
-val RecipeYml.ingredients: List<List<String>> get() {
-    if (instructions == null) {
-        return listOf()
-    }
-
-    return instructions!!
-            .flatMap { it.steps?.map(StepYml::add) ?: listOf() }
-            .filter { it != null }
-            .map { it!!.split(",").map(String::trim) }
-}
-
-val RecipeYml.tools: List<String> get() {
-    if (instructions == null) {
-        return listOf()
-    }
-
-    val stepTools =  instructions!!
-            .flatMap { it.steps?.map(StepYml::tool) ?: listOf() }
-            .filter { it != null }
-            .map { it!! }
-
-    val instructionTools = instructions!!
-            .map(InstructionYml::tool)
-            .filter { it != null }
-            .map { it !! }
-
-    return stepTools + instructionTools
-}
-
-val RecipeYml.techniques: List<List<String>> get() {
-    if (instructions == null) {
-        return listOf()
-    }
-
-    return instructions!!
-            .flatMap { it.steps?.map(StepYml::technique) ?: listOf() }
-            .filter { it != null }
-            .map { it!!.split(",").map(String::trim) }
 }
