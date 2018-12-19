@@ -13,6 +13,8 @@ import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.dao.EntityID
 import kuokko.api.db.*
 
+class ILikeOp(expr1: Expression<*>, expr2: Expression<*>): ComparisonOp(expr1, expr2, "ilike")
+
 @Singleton
 class DatabaseRecipeRepository(
     val ingredientRepository: IngredientRepository,
@@ -73,8 +75,17 @@ class DatabaseRecipeRepository(
     fun byId(id: String): QueryOp = { RecipeDB.id eq UUID.fromString(id) }
     fun byTitle(recipe: Recipe): QueryOp = { RecipeDB.title eq recipe.title }
 
-    override fun search(): List<Recipe> = transaction {
-        RecipeDB.selectAll().map(::hydrateBasic)
+    override fun search(title: String?, page: Int?): List<Recipe> = transaction {
+        addLogger(StdOutSqlLogger)
+        val query = when(title) {
+            null -> RecipeDB.selectAll()
+            else -> RecipeDB.select {
+                title.split(" ").map(String::trim).fold(intLiteral(1) eq intLiteral(1)) { acc, v ->
+                    AndOp(acc, ILikeOp(RecipeDB.title, stringLiteral("%$v%")))
+                }
+            }
+        }
+        query.limit(10, 10 * (page ?: 0)).map(::hydrateBasic)
     }
 
     override fun get(id: String) = transaction {

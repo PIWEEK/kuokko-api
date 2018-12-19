@@ -8,7 +8,7 @@ import java.util.UUID
 fun Table.uuidPK() = uuid("id").primaryKey().clientDefault { UUID.randomUUID() }
 
 object RecipeDB: UUIDTable("recipes") {
-    val title = text("name").uniqueIndex()
+    val title = text("title").uniqueIndex()
     val author = text("author").nullable()
     val cookTime = varchar("cook_time", 255).nullable()
     val preparationTime = varchar("preparation_time", 255).nullable()

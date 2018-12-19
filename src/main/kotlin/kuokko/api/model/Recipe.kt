@@ -69,3 +69,8 @@ data class Recipe(
 ) {
     fun summary() = RecipeSummary(this.id, this.title)
 }
+
+data class RecipeFilter(
+    val title: String? = null,
+    val page: Int = 0
+)

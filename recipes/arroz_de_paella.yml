@@ -46,7 +46,7 @@ instructions:
       - add: Arroz bomba, 400gr
         note: La forma tradicional de ponerlo es haciendo una cruz en el agua y repartirlo de modo uniforme
       - wait: 10m
-      - other: Reducir el fuego al amitad
+      - other: Reducir el fuego a la mitad
       - wait: A que esté cocido
 
 
