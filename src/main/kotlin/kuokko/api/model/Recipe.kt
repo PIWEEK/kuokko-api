@@ -50,13 +50,11 @@ data class Step(
 
 data class RecipeSummary(
     val id: String? = null,
+    val _id: String,
     val title: String,
     val author: String? = null,
     val photoUrl: String? = null
-) {
-    val _link: String
-        get() = "http://localhost:8080/recipes/$id"
-}
+)
 
 data class Recipe(
     val id: String? = null,
@@ -76,7 +74,13 @@ data class Recipe(
     val techniques: List<Technique> = listOf(),
     val method: List<Instruction> = listOf()
 ) {
-    fun summary() = RecipeSummary(this.id, this.title, this.author, this.photoUrl)
+    fun summary(url: String) = RecipeSummary(
+        id = this.id,
+        _id = "$url/recipes/${this.id}",
+        title = this.title,
+        author = this.author,
+        photoUrl = this.photoUrl
+    )
 }
 
 data class RecipeFilter(

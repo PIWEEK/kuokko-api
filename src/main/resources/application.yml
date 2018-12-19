@@ -28,6 +28,7 @@ database:
   password: kuokko
   
 recipes:
+  url: http://localhost:8080
   data:
     folder: "/tmp/recipes"
 

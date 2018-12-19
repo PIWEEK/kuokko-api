@@ -14,8 +14,8 @@ object Application {
     @JvmStatic
     fun main(args: Array<String>) {
         Micronaut.build()
-                .packages("kuokko.api")
-                .mainClass(Application.javaClass)
-                .start()
+           .packages("kuokko.api")
+           .mainClass(Application.javaClass)
+           .start()
     }
 }

@@ -7,6 +7,7 @@ import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Produces
+import io.micronaut.context.annotation.Property
 
 import kuokko.api.model.Recipe
 import kuokko.api.model.RecipeFilter
@@ -17,7 +18,8 @@ import javax.annotation.Nullable
 @Controller("/recipes")
 class RecipeController(
     val recipeRepository: RecipeRepository,
-    val recipesLoader: RecipesLoader
+    val recipesLoader: RecipesLoader,
+    @Property(name="recipes.url") var url: String
 ) {
 
     @Get("/{?recipeFilter*}")
@@ -25,7 +27,7 @@ class RecipeController(
         recipeRepository.search(
             title = recipeFilter?.title,
             page = recipeFilter?.page
-        ).map(Recipe::summary)
+        ).map { it.summary(url) }
 
     @Get("/{id}")
     fun retrieveById(id: String) = recipeRepository.get(id)

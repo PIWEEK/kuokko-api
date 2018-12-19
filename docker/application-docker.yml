@@ -6,6 +6,7 @@ database:
   password: kuokko
   
 recipes:
+  url: http://quotes.kaleidos.net:3333
   data:
     folder: "/recipes"
 
