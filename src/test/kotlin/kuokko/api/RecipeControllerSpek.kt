@@ -12,7 +12,7 @@ object RecipeControllerSpec: Spek({
         val controller = server.applicationContext.getBean(RecipeController::class.java)
 
         it("List recipes") {
-            val recipes = controller.listRecipes()
+            val recipes = controller.listRecipes(null)
             assertEquals(10, recipes.size)
         }
 

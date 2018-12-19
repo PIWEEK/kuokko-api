@@ -9,7 +9,7 @@ import io.micronaut.context.annotation.Replaces
 @Singleton
 @Replaces(DatabaseRecipeRepository::class)
 class MockRecipeRepository: RecipeRepository {
-    override fun search(): List<Recipe> = (1 .. 10).map { Recipe("$it", "Recipe $it") }
+    override fun search(title: String?, page: Int?): List<Recipe> = (1 .. 10).map { Recipe("$it", "Recipe $it") }
     override fun get(id: String) = Recipe(id, "Recipe $id")
     override fun insert(recipe: Recipe) = recipe.copy(id = "1")
 }
