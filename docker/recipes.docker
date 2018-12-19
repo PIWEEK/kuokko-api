@@ -1,0 +1,12 @@
+FROM java:openjdk-8u111-alpine as build
+
+CMD mkdir /build
+COPY . /recipes/
+RUN cd /recipes && ./gradlew -Dorg.gradle.daemon=false -x test build
+
+FROM java:openjdk-8u111-alpine
+COPY --from=build /recipes/build/libs/kuokko-api-0.1-all.jar .
+COPY --from=build /recipes/recipes /recipes
+COPY --from=build /recipes/docker/application-docker.yml .
+
+CMD java -Dmicronaut.config.files=application-docker.yml -jar kuokko-api-0.1-all.jar

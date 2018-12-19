@@ -1,9 +1,8 @@
-version: '3.1'
+version: '2'
 
 services:
-  postgres:
+  kuokko-db:
     image: postgres:11.1-alpine
-    restart: always
     environment:
       POSTGRES_DB: kuokko_dev
       POSTGRES_USER: kuokko
@@ -12,3 +11,17 @@ services:
     ports:
       - 5432:5432
 
+  kuokko-api:
+    build:
+      dockerfile: docker/recipes.docker
+      context: ..
+
+    depends_on:
+      - kuokko-db
+
+    links:
+      - kuokko-db
+
+    ports:
+      - 3333:8080
+      
