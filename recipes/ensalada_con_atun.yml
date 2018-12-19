@@ -1,0 +1,22 @@
+title: Ensalada con atún
+author: Kuokko
+
+time:
+  cooking: 15
+  preparation: 10
+
+difficulty: easy
+servings: 4
+language: ES_es
+
+instructions:
+  - tool: Bol grande
+    steps:
+      - add: Lechuga
+      - add: Tomate, 2, en trozos
+      - add: Atún, 1 lata
+      - add: Cebolla
+      - add: Aceite
+      - add: Vinagre
+      - add: Sal
+      - technique: Remover

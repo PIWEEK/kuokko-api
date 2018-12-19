@@ -12,12 +12,15 @@ data class Ingredient(
 
 data class Tool(
     val id: String? = null,
-    val name: String
+    val name: String,
+    val description: String? = null,
+    val photo: String? = null
 )
 
 data class Technique(
     val id: String? = null,
-    val name: String
+    val name: String,
+    val description: String? = null
 )
 
 data class Instruction(
@@ -50,19 +53,23 @@ data class RecipeSummary(
     val title: String,
     val author: String? = null,
     val photoUrl: String? = null
-)
+) {
+    val _link: String
+        get() = "http://localhost:8080/recipes/$id"
+}
 
 data class Recipe(
     val id: String? = null,
     val title: String,
     val author: String? = null,
-    val cookTime: String? = null,
-    val preparationTime: String? = null,
-    val totalTime: String? = null,
+    val cookTime: Int? = null,
+    val preparationTime: Int? = null,
+    val totalTime: Int? = null,
     val difficulty: String? = null,
     val language: String? = "ES_es",
     val photoUrl: String? = null,
     val recipeUrl: String? = null,
+    val servings: Int? = null,
 
     val ingredients: List<Ingredient> = listOf(),
     val tools: List<Tool> = listOf(),

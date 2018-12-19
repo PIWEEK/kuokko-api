@@ -10,9 +10,10 @@ fun Table.uuidPK() = uuid("id").primaryKey().clientDefault { UUID.randomUUID() }
 object RecipeDB: UUIDTable("recipes") {
     val title = text("title").uniqueIndex()
     val author = text("author").nullable()
-    val cookTime = varchar("cook_time", 255).nullable()
-    val preparationTime = varchar("preparation_time", 255).nullable()
-    val totalTime = varchar("total_time", 255).nullable()
+    val servings = integer("servings").nullable()
+    val cookTime = integer("cook_time").nullable()
+    val preparationTime = integer("preparation_time").nullable()
+    val totalTime = integer("total_time").nullable()
     val difficulty = varchar("difficulty", 255).nullable()
     val language = varchar("language", 255).nullable()
     val photoUrl = text("photo_url").nullable()
@@ -79,7 +80,7 @@ object Schema {
 
         Database.connect(jdbcUrl, driver = "org.postgresql.Driver", user = config.user ?: "", password = config.password ?: "")
         transaction {
-            addLogger(StdOutSqlLogger)
+            // addLogger(StdOutSqlLogger)
             SchemaUtils.drop (
                 RecipeDB,
                 IngredientDB,

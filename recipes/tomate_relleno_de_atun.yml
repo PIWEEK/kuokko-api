@@ -1,5 +1,6 @@
 title: Tomate relleno de atún
-author: Kuokko
+author: OKDiario
+url: https://okdiario.com/recetas/2017/05/11/tomates-rellenos-frios-atun-61811
 
 time:
   cooking: 40
@@ -8,3 +9,11 @@ time:
 difficulty: easy
 servings: 4
 language: ES_es
+
+instructions:
+  - tool: Picadora
+    steps:
+      - add: Tomate, 4
+      - other: Partimos por los tomates la mitad
+      - other: Lo que les quitamos lo añadimos a la picadura
+      - add:

@@ -118,7 +118,9 @@ class RecipesLoader(
             Recipe(
                 title = recipe.title!!,
                 author = recipe.author,
-                cookTime = recipe.time?.cooking,
+                servings = recipe.servings?.toInt(),
+                cookTime = recipe.time?.cooking?.toInt(),
+                totalTime = recipe.time?.total?.toInt(),
                 difficulty = recipe.difficulty,
                 language = recipe.language ?: "ES_es",
                 ingredients = ingredients,
