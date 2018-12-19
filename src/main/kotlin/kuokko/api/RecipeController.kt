@@ -21,6 +21,6 @@ class RecipeController(
     fun listRecipes() = recipeRepository.search().map(Recipe::summary)
 
     @Get("/{id}")
-    fun retrieveById(id: String) = recipesLoader.processRecipes().getOrNull(0)
+    fun retrieveById(id: String) = recipeRepository.get(id)
 
 }

@@ -47,10 +47,14 @@ class DatabaseRecipeRepository(
         method = RecipeEntry.select {
             RecipeEntry.recipeId eq row[RecipeDB.id]
         }.map { entryRow ->
+            val stepsResult = RecipeStep.select {
+                RecipeStep.recipeEntryId eq entryRow[RecipeEntry.id]
+            }.orderBy(RecipeStep.order to true)
+
             Instruction(
                 id = entryRow[RecipeEntry.id].toString(),
                 description = entryRow[RecipeEntry.description],
-                steps = (RecipeEntry leftJoin RecipeStep).selectAll().map { stepRow ->
+                steps = stepsResult.map { stepRow ->
                     Step(
                         id = stepRow[RecipeStep.id].toString(),
                         action = stepRow[RecipeStep.action],
@@ -123,6 +127,7 @@ class DatabaseRecipeRepository(
                     it[description] = instruction.description
                 }
 
+                var current: Int = 1
                 for (step in instruction.steps) {
                     RecipeStep.insert {
                         it[this.recipeEntryId] = entryId
@@ -137,7 +142,9 @@ class DatabaseRecipeRepository(
                         it[description] = step.description
                         it[time] = step.time
                         it[note] = step.note
+                        it[order] = current
                     }
+                    current++
                 }
             }
 

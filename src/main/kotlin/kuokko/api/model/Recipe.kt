@@ -32,15 +32,15 @@ data class Step(
     val id: String? = null,
     val action: String,
 
-    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator::class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
+    // @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator::class, property="id")
+    // @JsonIdentityReference(alwaysAsId=true)
     val ingredient: Ingredient? = null,
     val portion: Float? = null,
     val description: String? = null,
     val time: String? = null,
 
-    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator::class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
+    // @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator::class, property="id")
+    // @JsonIdentityReference(alwaysAsId=true)
     val technique: Technique? = null,
     val note: String? = null
 )

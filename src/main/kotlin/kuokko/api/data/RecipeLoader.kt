@@ -111,7 +111,7 @@ class RecipesLoader(
                             else -> null
                         }
                     }.filter { it != null}.map { it!! }
-                    Instruction(steps = steps)
+                    Instruction(steps = steps, description = it.description)
                 }
 
         val result = recipeRepository.insert(
@@ -134,6 +134,7 @@ class RecipesLoader(
 class TimeYml {
     var cooking: String? = null
     var preparation: String? = null
+    var total: String? = null
 }
 
 class StepYml {
@@ -148,6 +149,7 @@ class StepYml {
 class InstructionYml {
     var tool: String? = null
     var steps: List<StepYml>? = null
+    var description: String? = null
 }
 
 class RecipeYml {

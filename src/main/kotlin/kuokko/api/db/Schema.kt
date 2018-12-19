@@ -67,6 +67,7 @@ object RecipeStep: UUIDTable("recipe_step") {
     val description = varchar("description", 255).nullable()
     val time = varchar("time", 255).nullable()
     val note = varchar("note", 255).nullable()
+    val order = integer("order")
 }
 
 object Schema {

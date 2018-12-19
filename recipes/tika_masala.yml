@@ -1,0 +1,63 @@
+title: Tika Masala
+
+time:
+  preparation: 30m
+  cooking: 50m
+  total: 2h 20m
+
+dificulty: easy
+servings: 4
+
+instructions:
+  - tool: Bol grande
+    description: Vamos a marinar el pollo
+    steps:
+      - add: Yogur natural, 1 copa
+      - add: Zumo de limón, 1 cuchara sopera
+      - add: Comino, 1 cucharilla
+      - add: Canela, 2 cucharillas
+      - add: Cayena, 2 cucharillas
+      - add: Pimienta negra, 2 cucharillas
+      - add: Gengibre, 1 cuchara
+      - add: Sal, 1 cucharilla
+      - add: Pechuga de pollo, 3 unidades, deshuesado y cortado en trozos
+      - technique: Remover, hasta que estén mezclados los ingredientes
+      - other: Cubrir con un paño
+      - other: Meter en el refrigerador
+      - wait: 1h
+
+  - tool: Horno
+    steps:
+      - other: Precalentar a 200 grados
+
+  - tool: Bandeja de horno
+    steps:
+      - other: Aplicar una fina capa de aceite
+      - other: Pinchar los trozos pollo en los pinchos
+        tool: Pinchos de cocina
+      - other: Descartar el resto de la marinada
+      - wait: 5m
+        note: Hornear por un lado
+      - wait: 5m
+        note: Y hornear por el otro lado
+
+  - tool: Sarten grande
+    steps:
+      - other: Fuego medio
+      - add: Mantequilla, 1 cucharada
+      - wait: A que se funda la mantequilla
+      - add: Ajo, 1 diente, picado
+      - add: Jalapeño, 1, cortado fino
+      - technique: Rehogar, 1m
+      - add: Comino, 1 cucharilla
+      - add: Pimenton, 2 cucharillas
+      - add: Sal
+      - add: Tomate, 225gr, triturado
+      - add: Nata, 1 copa
+      - technique: Remover, 20m
+        note: Hasta que la salsa se espese
+      - other: Incluir el pollo del horno
+      - wait: 10m
+
+  - description: Servir en plato y decorar con cilantro
+
