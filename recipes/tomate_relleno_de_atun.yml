@@ -14,7 +14,32 @@ language: ES_es
 instructions:
   - tool: Picadora
     steps:
-      - add: Tomate, 4
-      - other: Partimos por los tomates la mitad
-      - other: Lo que les quitamos lo añadimos a la picadura
-      - add:
+      - add: Tomate, 4 unidades
+      - other: Partimos por los tomates la mitad y los vaciamos
+      - other: Lo que les quitamos lo añadimos a la picadora
+      - add: Ajo, 1 diente
+      - technique: Trituramos
+        note: Hasta obtener una mezcla de puré de tomate
+      - other: Reservamos
+  - tool: Cazuela
+    steps:
+      - add: Huevo, 2 unidades
+      - technique: Cocer
+      - wait: 8m
+      - other: Los dejamos reposar en un recipiente con agua y los pelamos
+  - tool: Recipiente
+    steps:
+      - add: Atún, 150g, al natural
+      - other: Incorporamos el puré de tomate
+      - other: Rallamos los huevos cocidos
+      - technique: Mezclar todos los ingredientes
+      - add: Sal
+      - add: Pimienta
+      - add: Mayonesa, 2 cucharadas
+  - tool: Nevera
+    steps:
+      - other: Vamos a enfriar los tomates en la nevera
+      - wait: 1h
+      - other: Rellenamos de la mezcla
+      - add: Perejil, 1 cucharada, picado
+        note: Espolvorear con perejil para presentar

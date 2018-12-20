@@ -1,6 +1,8 @@
-title: Croquetas de jamon
-author: Kuokko
-photo: https://www.hogarmania.com/archivos/201801/croquetas-jamon-detalle-848x477x80xX.jpg
+title: Croquetas de jamón
+author: Recetas de Escandalo
+
+url: https://www.recetasdeescandalo.com/croquetas-jamon-caseras-la-receta-mas-sabrosa/
+photo: https://cdn6.recetasdeescandalo.com/wp-content/uploads/2016/10/Croquetas-de-jamon-caseras-la-receta-mas-sabrosa.jpg
 
 time:
   cooking: 40
@@ -9,3 +11,44 @@ time:
 difficulty: easy
 servings: 4
 language: ES_es
+
+instructions:
+  - tool: Cazo
+    steps:
+      - other: Poner a fuego suave
+      - add: Mantequilla, 100gr
+      - wait: A que esté líquida
+      - other: Aparta el cazo del fuego
+      - add: Harina, 80gr
+      - technique: Mezclar
+        note: Rápidamente para que se forme una pasta homogénea y no queden grumos
+      - other: Volver a poner el cazo en el fuego
+      - other: Fuego suave
+      - add: Leche, 1 litro
+        note: Incorpora la leche poco a poco mientras vas mezclando
+      - technique: Mezclar
+        note: Seguir mezclando para que no se formen grumos
+      - add: Nuez moscada
+      - add: Sal
+        note: No te pases porque el jamón aporta sal
+      - add: Jamón serrano, 200gr, taquitos muy pequeños
+      - technique: Remover, 20m
+        note: Estará lista cuando, al remover, se hagan surcos que dejen ver el fondo del cazo
+      - other: Aparta del fuego y vierte la bechamel en otro recipiente
+      - other: Dejala enfriar tapada en contacto con papel firml
+      - other: Guardar en la nevera
+      - wait: 24h
+      - other: Da forma a las croquetas
+      - other: Prepara un plato con harina
+      - other: Prepar un segundo plato
+      - add: Huevos, 2 unidades, batidos
+      - other: Preparar otro plato con pan rallado
+  - tool: Sarten
+    steps:
+      - add: Aceite de girasol
+      - other: Poner el fuego fuerte
+      - wait: Que el aceite esté bien caliente
+      - technique: Freir, unos segundos
+        note: Procura que se hagan por todos los lados
+      - other: Conforme estén fritas ve escurriendolas y poniendolas sobre un plato con papel de cocina para que empape el aceite
+

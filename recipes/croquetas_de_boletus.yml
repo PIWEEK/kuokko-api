@@ -1,0 +1,63 @@
+title: Croquetas de boletus
+author: Nimataniengorda
+
+url: https://www.nimataniengorda.com/croquetas-de-boletus-receta-casera/
+photo: http://www.nimataniengorda.com/wp-content/uploads/2015/10/CroquetasBoletus2.jpg
+
+time:
+  cooking: 12
+  preparation: 30
+
+difficulty: easy
+servings: 4
+language: ES_es
+
+instructions:
+  - tool: Bol
+    steps:
+      - add: Boletus, 200gr, ya limpios
+      - other: Cortamos los boletus en trozos pequeños
+        note: Nos quedamos solo con las partes nobles
+  - tool: Sartén
+    steps:
+      - add: Cebolla, 1 unidad, cortada en juliana
+      - add: Aceite de oliva, 40ml
+      - other: Poner a fuego medio
+      - wait: 5m
+        note: Para que ablande y aporte sabor
+      - other: Retiramos
+      - other: Añadir los boletus reservados
+      - technique: Pochamos, hasta que estén blanditos
+      - other: Retiramos y reservamos
+      - add: Harina, 75gr
+        note: La vamos añadiendo poco a poco al aceite, mezclando yd eshaciendo los grumos que aparezcan.
+      - add: Leche, 100ml, fria
+      - technique: Removemos
+        note: Sin cesar, en círculos, sin prisas para que se vaya mezclando de forma homogénea
+      - other: Repetimos el proceso dos veces más, añadiendo el resto de la leche
+      - other: Seguimos removiendo sin parar hasta que nos quede una bechamel en su punto, homogénea y sin grumos.
+      - other: Incorporamos los boletus picados y seguimos mezclando
+  - tool: Fuente plana
+    steps:
+      - other: Pasamos la bechamel a la fuente
+      - other: Dejamos que atempere y guardamos en la nevera con film transparente.
+        tool: Nevera
+      - wait: 12h
+  - tool: Plato fondo
+    steps:
+      - other: Preparar dos platos
+      - add: Pan rallado, 100gr
+        note: En el primer plato
+      - add: Huevos, 2 unidades, batidos
+        note: En el segundo plato
+      - other: Vamos haciendo esferas del tamaño de una nuez
+      - other: Las pasamos por huevo y por pan rallado
+      - other: Reservamos en una fuente o plato
+  - tool: Sarten
+    steps:
+      - add: Aceite de oliva, 1 dedo
+      - other: Poner a fuego alto
+        note: El aceite tiene que estar bien caliente para que queden crujientes las croquetas
+      - technique: Freimos, vuelta y vuelta hasta que estén doradas y crujientes
+      - other: Reservamos sobre papel absorvente para que suelte en exceso de aceite
+

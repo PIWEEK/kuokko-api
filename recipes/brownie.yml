@@ -1,11 +1,45 @@
 title: Brownie
-author: Kuokko
-photo: https://images-gmi-pmc.edge-generalmills.com/d48f476f-ab97-4edf-8d5b-d617e5f261d0.jpg
+author: El Mundo
+
+url: http://recetasdecocina.elmundo.es/2018/03/brownie-chocolate-receta-facil.html
+photo: http://recetasdecocina.elmundo.es/wp-content/uploads/2016/11/brownie-de-chocolate.jpg
 
 time:
-  cooking: 40
+  cooking: 30
   preparation: 20
 
 difficulty: easy
 servings: 4
 language: ES_es
+
+instructions:
+  - tool: Bol grande
+    steps:
+      - add: Chocolate negro, 200gr
+      - add: Mantequilla, 110gr
+      - other: Lo metemos al microondas a temperatura media para que derrita
+        tool: Microondas
+      - technique: Mezclamos
+        note: Hay que mezclarlo bien
+  - tool: Segundo bol
+    steps:
+      - add: Huevos, 4 unidades
+      - add: Azucar, 120gr
+      - add: Harina, 85gr
+      - add: Bicarbonato
+      - technique: Mezclamos
+        note: Hay que mezclarlo bien
+      - other: Agregamos la mezcla del primer bol
+      - add: Esencia de vainilla, 1 cucharada
+      - technique: Mezclamos
+      - add: Nueces
+      - add: Pepitas de chocolate
+  - tool: Recipiente para horno
+    steps:
+      - other: Aplicamos un poco de mantequilla y harina para que no se pegue el brownie.
+      - other: Incorporamos la mezcla
+      - other: Cubrimos con unas pepitas y nueces
+  - tool: Horno
+    steps:
+      - other: Poner el horno a 180º.
+      - wait: 30m

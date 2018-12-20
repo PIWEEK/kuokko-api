@@ -1,6 +1,8 @@
-title: Tiramisu
-author: Kuokko
-photo: https://www.fifteenspatulas.com/wp-content/uploads/2012/11/Tiramisu-Fifteen-Spatulas-1.jpg
+title: Tiramisu Casero
+author: Directo al Paladar
+
+url: https://www.directoalpaladar.com/postres/como-hacer-tiramisu-casero-receta
+photo: https://i.blogs.es/e0fc47/tiramisu/1366_2000.jpg
 
 time:
   cooking: 40
@@ -9,3 +11,34 @@ time:
 difficulty: easy
 servings: 4
 language: ES_es
+
+instructions:
+  - tool: Cafetera
+    steps:
+      - add: Café, 175ml
+      - other: Preparamos café bien fuerte y lo dejamos enfriar
+  - tool: Bol
+    steps:
+      - add: Clara de huevo, 2 unidades
+      - technique: Montamos a punto de nieve
+  - tool: Bol
+    steps:
+      - add: Yema de huevo, 4 unidades
+      - add: Azucar, 100gr
+      - technique: Batimos
+        note: Hasta que tenga una consistencia espumosa
+      - add: Queso mascarpone, 400gr
+        note: Poco a poco y seguimos batiendo a poca velocidad
+      - other: Incorporamos las claras montadas
+      - technique: Mezclamos con una espatula realizando movimientos envolventes
+  - tool: Molde rectangular
+    steps:
+      - add: Bizcochos de soletilla, 200gr
+        note: Empapados del café
+      - other: Cubrimos con una capa de crema mascarpone
+      - add: Chocolate negro rallado, 200gr
+      - other: "Repetimos la operación: bizcochos empampados, crema mascarpone y chocolate rallado"
+      - add: Cacao en polvo
+        note: espolvoreamos
+      - other: Guardamos en la nevera
+      - wait: 3h

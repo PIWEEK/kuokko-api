@@ -1,11 +1,36 @@
 title: Ensalada de garbanzos
-author: Kuokko
+author: Laylita
+
+url: https://www.laylita.com/recetas/ensalada-de-garbanzos-atun-aguacate/
 photo: https://www.laylita.com/recetas/wp-content/uploads/2017/04/Ensalada-de-garbanzos-con-atun-y-aguacate.jpg
 
 time:
-  cooking: 40
-  preparation: 20
+  cooking: 0
+  preparation: 15
+  total: 15
 
 difficulty: easy
 servings: 4
 language: ES_es
+
+instructions:
+  - tool: Frasco pequeño
+    steps:
+      - add: Jugo de limón, 1 limón
+      - add: Aceite de oliva, 3 cucharadas
+      - add: Mostaza, 1 cucharadita
+      - add: Cilantro, 1 cucharada, finamente picado
+      - add: Sal
+      - add: Pimienta
+      - technique: Mezclar
+        note: Cierre bien y agite hasta que estén bien mezclados los ingredientes
+  - tool: Bol para ensaladas
+    steps:
+      - add: Garbanzos, 425gr
+      - add: Atún, 140gr
+      - add: Cebolla, media, picada en cubitos
+      - add: Tomate, 2 unidades, cortados en cubitos
+      - add: Aguacate, 1 unidad, cortado en cubitos
+      - other: Agregue el aderezo
+      - technique: Mezcle
+      - other: Sirva la ensalada de garbanzos sólo o acompañado de hojas de lechuga

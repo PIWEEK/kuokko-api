@@ -14,10 +14,11 @@ instructions:
   - tool: Bol grande
     steps:
       - add: Lechuga
-      - add: Tomate, 2, en trozos
-      - add: Atún, 1 lata
-      - add: Cebolla
+      - add: Tomate, 2 unidades, en trozos
+      - add: Atún, 1 lata, distribuir uniformemente
+      - add: Cebolla, cortada fina
       - add: Aceite
-      - add: Vinagre
-      - add: Sal
-      - technique: Remover
+      - add: Vinagre, al gusto
+      - add: Sal, lo que te pida
+        note: La ensalada bien salada y de aceite bien cargada
+      - technique: Remover, hasta que se mezclen bien los ingredientes

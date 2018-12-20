@@ -1,6 +1,8 @@
 title: Tortilla de patatas
-author: Kuokko
-photo: https://www.comedera.com/wp-content/uploads/2016/06/como-hacer-tortilla-de-patatas.jpg
+author: Hogarmania
+
+url: https://www.hogarmania.com/cocina/recetas/huevos/201106/tortilla-patatas-8684.html
+photo: https://static.hogarmania.com/archivos/201610/tortilla-patatas-xl-848x477x80xX.jpg
 
 time:
   cooking: 40
@@ -9,3 +11,28 @@ time:
 difficulty: easy
 servings: 4
 language: ES_es
+
+instructions:
+  - tool: Sartén
+    steps:
+      - add: Aceite
+      - add: Cebolla, 1 unidad, picada en dados
+      - add: Pimiento verde, 1 unidad, cortado en dados
+      - add: Patatas, 600gr, cortadas en medias lunas finas de 1/2 centimetros
+      - technique: Freir, a fuego suave
+      - wait: 30m
+      - other: Reservar y escurrir
+      - other: Limpia la sartén con un papel absorvente
+  - tool: Recipiente
+    steps:
+      - add: Huevos, 6 unidades, batidos
+      - add: Sal
+      - other: Incoprpora la mezcla
+  - tool: Sarten
+    steps:
+      - add: Aceite
+      - other: Agrega la mezcla
+      - wait: 20s
+        note: A que empiece a cuajarse
+      - other: Cubre con un plato y dale la vuelta
+      - other: Échala de nuevo para que cuaje por el otro lado

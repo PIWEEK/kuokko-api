@@ -1,6 +1,9 @@
 title: Paella valenciana
-author: Kuokko
-photo: https://cdn1.cocina-familiar.com/recetas/thumb/paella-de-arroz-con-magro-de-cerdo-y-verduras-de-temporada.JPG
+author: La Fallera
+
+url: https://www.lafallera.es/recetas/paella-valenciana/
+photo: https://www.lafallera.es/wp-content/uploads/2015/02/K2F1902paella-valenciana1-562x315.jpg
+
 description:
   La paella es un plato típico de la gastronomía española y
   originariamente proviene de la provincia de Valencia, situada en la
@@ -49,5 +52,4 @@ instructions:
       - wait: 10m
       - other: Reducir el fuego a la mitad
       - wait: A que esté cocido
-
 
