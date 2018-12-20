@@ -126,6 +126,7 @@ class RecipesLoader(
             totalTime = recipe.time?.total?.toInt(),
             difficulty = recipe.difficulty,
             language = recipe.language ?: "ES_es",
+            photoUrl = recipe.photo,
             ingredients = parseIngredients(recipe),
             tools = parseTools(recipe),
             techniques = parseTechniques(recipe)
