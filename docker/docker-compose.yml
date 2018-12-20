@@ -1,6 +1,14 @@
 version: '2'
 
 services:
+  kuokko-front:
+    build:
+      dockerfile: docker/front.docker
+      context: ..
+
+    ports:
+      - 4444:80
+   
   kuokko-db:
     image: postgres:11.1-alpine
     environment:
