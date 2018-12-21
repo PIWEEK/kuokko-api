@@ -1,0 +1,37 @@
+title: Victoria en Piweek
+author: Kuokko
+
+url: https://github.com/piweek/kuokko
+photo: https://www.niwi.nz/_stuff/IMG-4324.GIF
+
+time:
+  cooking: 40
+  preparation: 10
+
+difficulty: hard
+servings: 30
+language: ES_es
+
+instructions:
+  - tool: Piweek
+    steps:
+      - add: Carne humana, 350 kg, en 4 trozos
+      - other: Alíñelo con cerveza. ¡COMO PARA UNA BODA!
+      - other: Calentar a fuego lento. Cuando estén apunto de quemarse los quitas
+      - add: Diseño de interfaz de voz, 1 unidad, bien iocainizada.
+      - technique: Cortar en juliana
+        note: Coge una gran cantidad de información y córtalo bien fino
+      - other: Reserva una parte pequeña y descarta el resto, (No la vas a usar)
+      - add: Kotlin, 1411 líneas, bien fresco
+      - add: Micronaut, 1 microservicio, recién pescado
+      - technique: Hervir
+        note: A fuego lento hasta que esté bien blandito
+      - wait: 5 segundos
+      - add: Máquina de estados, 2 ficheros, marca Andrey
+      - add: RxJS, 1 unidad, no muy podrido
+      - other: Pincha con un tenedor varias veces hasta que te mande a la mierda
+      - other: Llora un poco porque en móvil funciona regular
+      - add: Stencil, 0.16, bastante verde
+      - other: Corta Stencil en daditos pequeños y mézclalos al gusto
+      - other: Rocía con albahaca fresca
+      - other: Servir bien caliente
